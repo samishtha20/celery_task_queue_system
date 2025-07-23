@@ -39,3 +39,9 @@ celery-hpa    Deployment/celery-worker   80%/60%         1         5         4  
 
 ## Screenshots
 (Add screenshots of HPA scaling, pod counts, Grafana dashboards if available)
+
+
+<img width="362" height="48" alt="Screenshot 2025-07-23 at 11 06 07 PM" src="https://github.com/user-attachments/assets/5f1e7568-3e38-42d6-9dde-fd718f6cc417" />
+
+
+
