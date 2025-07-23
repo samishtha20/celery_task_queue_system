@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: celery-exporter
+  template:
+    metadata:
+      labels:
+        app: celery-exporter
+    spec:
+      containers:
+      - name: celery-exporter
+        image: danihodovic/celery-exporter:latest
+        args: ["--broker-url", "amqp://user:XfoJMqVgKg2tvG7I@rabbitmq:5672//"]
+        ports:
+        - containerPort: 9808

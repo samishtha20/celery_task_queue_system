@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: celery
+  template:
+    metadata:
+      labels:
+        app: celery
+        component: worker
+    spec:
+      containers:
+      - name: celery
+        image: celery-autoscaler
+        imagePullPolicy: Never
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "500m"
+        env:
+        - name: BROKER_URL
+          value: amqp://user:XfoJMqVgKg2tvG7I@rabbitmq:5672/

@@ -1,1 +1,0 @@
-# celery_task_queue_system
